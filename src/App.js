@@ -45,8 +45,83 @@ function SideBar() {
   );
 }
 
+function BasicNumber({ number, content }) {
+  return (
+    <Card border="primary" className="BasicNumber">
+      <Card.Body>
+        <Card.Title
+          style={{ color: "#007bff", fontWeight: "bold", fontSize: "25px" }}
+        >
+          {number}
+        </Card.Title>
+        <Card.Text>{content}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+}
+
+function BiggerCard({ image, content }) {
+  return (
+    <Card
+      bg="dark"
+      text="white"
+      style={{ width: "20rem", height: "20rem", margin: "1rem" }}
+    >
+      <Card.Img variant="top" src={image} height="73%" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>{content}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+}
+
+function ImageCard({ image }) {
+  return (
+    <Card
+      bg="dark"
+      text="white"
+      style={{ width: "100%", margin: "1rem 0", height: "15rem" }}
+    >
+      <Card.Img variant="top" src={image} height="80%" />
+      <Card.Body>
+        <Card.Text>Upload Date</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+}
+
+function LongCard({ image1, image2 }) {
+  return (
+    <Card>
+      <Card.Header as="h5">Recent Uploads</Card.Header>
+
+      <ImageCard image={image1} />
+      <ImageCard image={image2} />
+    </Card>
+  );
+}
+
 function Home() {
-  return <div> HEllo</div>;
+  return (
+    <div className="home">
+      <div className="heading">Welcome, UserName</div>
+      <div style={{ display: "flex" }}>
+        <div>
+          <div style={{ display: "flex" }}>
+            <BasicNumber number="100" content="Total Click" />
+            <BasicNumber number="150" content="Reshares" />
+            <BasicNumber number="350" content="Flyers Saved" />
+          </div>
+          <div style={{ display: "flex" }}>
+            <BiggerCard image={logo} content="Total Click" />
+            <BiggerCard image={logo} content="Reshares" />
+          </div>
+        </div>
+        <LongCard image1={logo} image2={logo} />
+      </div>
+    </div>
+  );
 }
 
 export default function App() {

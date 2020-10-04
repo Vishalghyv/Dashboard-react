@@ -12,3 +12,17 @@ body > #root > div {
   width: 300px;
   height: 100%;
 }
+
+.home {
+  padding: 30px;
+}
+
+.heading {
+  font-size: 30px;
+  margin: 30px 0;
+}
+
+.BasicNumber {
+  width: 11rem;
+  margin: 1.75rem;
+}
