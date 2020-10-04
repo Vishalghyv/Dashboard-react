@@ -13,6 +13,11 @@ import {
 } from "react-bootstrap";
 
 import logo from "./groffery.jpg";
+import analytics from "./analytics.png";
+import upload from "./upload.jpg";
+import back from "./back.jpg";
+import image1 from "./image-1.jpg";
+import image2 from "./image-2.jpg";
 
 function SideBar() {
   return (
@@ -83,10 +88,7 @@ function ImageCard({ image }) {
       text="white"
       style={{ width: "100%", margin: "1rem 0", height: "15rem" }}
     >
-      <Card.Img variant="top" src={image} height="80%" />
-      <Card.Body>
-        <Card.Text>Upload Date</Card.Text>
-      </Card.Body>
+      <Card.Img variant="top" src={image} height="100%" />
     </Card>
   );
 }
@@ -114,11 +116,11 @@ function Home() {
             <BasicNumber number="350" content="Flyers Saved" />
           </div>
           <div style={{ display: "flex" }}>
-            <BiggerCard image={logo} content="Total Click" />
-            <BiggerCard image={logo} content="Reshares" />
+            <BiggerCard image={analytics} content="Analytics" />
+            <BiggerCard image={upload} content="Upload New flyer" />
           </div>
         </div>
-        <LongCard image1={logo} image2={logo} />
+        <LongCard image1={image1} image2={logo} />
       </div>
     </div>
   );
@@ -127,6 +129,7 @@ function Home() {
 export default function App() {
   return (
     <div className="App">
+      <div class="bg-image" style={{ backgroundImage: `url(${back})` }}></div>
       <SideBar />
       <Home />
     </div>
